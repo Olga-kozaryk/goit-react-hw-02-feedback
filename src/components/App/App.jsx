@@ -1,9 +1,9 @@
 import { Component } from "react";
-import {FeedbackOptions} from './FeedbackOptions/FeedbackOptions'
-import { Section } from "./Section/Section";
-import { Notification } from "./Notification/Notification";
-import { Statistics } from "./Statistics/Statistics";
-
+import {FeedbackOptions} from '../FeedbackOptions/FeedbackOptions'
+import { Section } from "../Section/Section";
+import { Notification } from "../Notification/Notification";
+import { Statistics } from "../Statistics/Statistics";
+import {Container} from "./App.styled"
  class App extends Component {
   state = {
     good: 0,
@@ -32,14 +32,7 @@ import { Statistics } from "./Statistics/Statistics";
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
   return (
-    <div  style={{
-      margin: '50px auto',
-      padding: '25px',
-      width: '400px',
-      border: '1px solid #AE6A2E',
-      borderRadius: '15px',
-      backgroundColor: '#FFEC8A'
-    }}>
+    <Container>
       <Section title="Please leave feedback">
         <FeedbackOptions
           options={options}
@@ -60,7 +53,7 @@ import { Statistics } from "./Statistics/Statistics";
           <Notification message="There is no feedback" />
         )}
       </Section>
-    </div>
+    </Container>
   );
 }
 }
